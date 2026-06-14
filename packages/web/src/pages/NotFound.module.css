@@ -1,0 +1,29 @@
+.page {
+  padding: 48px 0;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.text {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--accent);
+  transition: border-color 0.15s;
+}
+
+.link:hover {
+  border-color: var(--accent);
+}

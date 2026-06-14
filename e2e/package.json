@@ -1,0 +1,20 @@
+{
+  "name": "@mcd/e2e",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test smoke.spec.ts",
+    "test:functional": "playwright test functional.spec.ts",
+    "test:regression": "playwright test regression.spec.ts",
+    "test:critical": "playwright test critical-flows.spec.ts",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "report": "lsof -ti:9323 | xargs kill -9 2>/dev/null; playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}

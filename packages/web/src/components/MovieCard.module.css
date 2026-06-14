@@ -1,0 +1,37 @@
+.card {
+  display: block;
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition:
+    border-color 0.12s ease,
+    transform 0.12s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.rating {
+  color: #f5c451;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}

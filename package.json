@@ -1,0 +1,51 @@
+{
+  "name": "movie-content-discovery",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "e2e"
+  ],
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "env:init": "node scripts/ensure-env.mjs",
+    "db:up": "node scripts/check-docker.mjs && docker compose down --remove-orphans && docker compose up -d",
+    "db:down": "docker compose down",
+    "db:wait": "node scripts/wait-for-db.mjs",
+    "db:generate": "npm run -w @mcd/db db:generate",
+    "db:migrate": "npm run -w @mcd/api db:migrate",
+    "ingest": "npm run -w @mcd/pipeline start",
+    "api": "npm run -w @mcd/api dev",
+    "web": "npm run -w @mcd/web dev",
+    "test": "npm run -w @mcd/api test && npm run -w @mcd/pipeline test && npm run -w @mcd/web test && node scripts/merge-coverage.mjs",
+    "test:unit": "npm run -w @mcd/api test:unit && npm run -w @mcd/pipeline test:unit && npm run -w @mcd/web test:unit && node scripts/merge-coverage.mjs",
+    "test:component": "npm run -w @mcd/web test:component",
+    "test:integration": "npm run -w @mcd/api test:integration && npm run -w @mcd/pipeline test:integration && npm run -w @mcd/web test:integration && node scripts/merge-coverage.mjs",
+    "e2e": "npm run -w @mcd/e2e test",
+    "e2e:smoke": "npm run -w @mcd/e2e test:smoke",
+    "e2e:functional": "npm run -w @mcd/e2e test:functional",
+    "e2e:regression": "npm run -w @mcd/e2e test:regression",
+    "e2e:critical": "npm run -w @mcd/e2e test:critical",
+    "e2e:ui": "npm run -w @mcd/e2e test:ui",
+    "e2e:report": "npx playwright show-report e2e/playwright-report",
+    "test:all": "npm run test && npm run e2e && node -e \"console.log('\\n✅ All tests completed!\\n\\nTo view E2E report: \\x1b[36mnpm run e2e:report\\x1b[0m\\n(Or navigate to e2e/ folder first, then run: npx playwright show-report)\\n')\"",
+    "build": "npm run -w @mcd/api build && npm run -w @mcd/web build",
+    "build:api": "npm run -w @mcd/api build",
+    "build:web": "npm run -w @mcd/web build"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.1.8",
+    "typescript": "^6.0.3",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^4.1.8"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

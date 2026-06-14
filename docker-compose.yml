@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: mcd-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: movies
+    ports:
+      # Host port is configurable via HOST_DB_PORT in .env (compose auto-loads it)
+      # so a local Postgres already on 5432 doesn't block setup. Container port
+      # stays 5432. If you change HOST_DB_PORT, update the port in DATABASE_URL /
+      # DATABASE_URL_TEST to match.
+      - "${HOST_DB_PORT:-5432}:5432"
+    volumes:
+      - mcd-pgdata:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d movies"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+
+volumes:
+  mcd-pgdata:

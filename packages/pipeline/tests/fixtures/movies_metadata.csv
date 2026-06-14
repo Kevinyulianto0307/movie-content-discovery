@@ -1,0 +1,4 @@
+adult,budget,genres,id,imdb_id,original_language,original_title,overview,popularity,release_date,revenue,runtime,status,tagline,title,vote_average,vote_count
+0,30000000,"[{'id': 16, 'name': 'Animation'}, {'id': 35, 'name': 'Comedy'}, {'id': 10751, 'name': 'Family'}]",862,tt0114709,en,Toy Story,Led by Woody a group of toys comes to life.,21.946943,1995-10-30,373554033,81,Released,A cowboy doll and a spaceman.,Toy Story,7.7,5415
+0,65000000,"[{'id': 12, 'name': 'Adventure'}, {'id': 14, 'name': 'Fantasy'}, {'id': 10751, 'name': 'Family'}]",8844,tt0113497,en,Jumanji,Two kids play a magical board game.,17.015539,1995-12-15,262797249,104,Released,Roll the dice and unleash the excitement!,Jumanji,6.9,2413
+0,0,"[{'id': 35, 'name': 'Comedy'}, {'id': 10749, 'name': 'Romance'}]",15602,tt0113228,en,Grumpier Old Men,A family wedding reignites the feud between neighbors.,11.7129,1995-12-22,0,101,Released,Still Yelling. Still Fighting. Still Ready for Love.,Grumpier Old Men,6.5,92

@@ -1,0 +1,18 @@
+.message {
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--muted);
+}
+
+.error {
+  border-color: #5b2330;
+  background: #2a1820;
+  color: #ff9aa9;
+}
+
+.empty {
+  color: var(--muted);
+}

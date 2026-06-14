@@ -1,0 +1,54 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table thead th {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table tbody tr:hover {
+  background: var(--panel);
+}
+
+.right {
+  text-align: right;
+}
+
+.th {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.th:hover {
+  color: var(--text);
+}
+
+.caret {
+  color: var(--accent);
+}
+
+.link {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.link:hover {
+  color: var(--accent);
+}
